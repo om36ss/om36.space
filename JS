@@ -1,0 +1,22 @@
+// Dummy GitHub projects data
+const githubProjects = [
+    { name: 'Rock Paper Scissors', description: 'A simple Rock Paper Scissors game', url: 'https://github.com/om36ss/Rock-Paper-Scissors' },
+    { name: 'Etch-a-Sketch Project', description: 'A digital version of the classic drawing toy', url: 'https://github.com/om36ss/Etch-a-Sketch-Project' },
+    { name: 'Calculator Project', description: 'A basic calculator web application', url: 'https://github.com/om36ss/Calculator-Project' }
+];
+
+// Function to dynamically populate GitHub projects
+function populateGitHubProjects() {
+    const githubProjectsList = document.getElementById('github-projects');
+    githubProjects.forEach(project => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.textContent = project.name;
+        link.href = project.url;
+        listItem.appendChild(link);
+        githubProjectsList.appendChild(listItem);
+    });
+}
+
+// Call the function to populate GitHub projects when the DOM is loaded
+document.addEventListener('DOMContentLoaded', populateGitHubProjects);
